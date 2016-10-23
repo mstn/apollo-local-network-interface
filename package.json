@@ -1,0 +1,47 @@
+{
+  "name": "apollo-local-network-interface",
+  "version": "0.1.0",
+  "description": "Use Apollo without a GraphQL server (porting of relay-local-schema)",
+  "main": "./lib/src/index.js",
+  "typings": "./lib/src/index.d.ts",
+  "scripts": {
+    "compile": "tsc",
+    "dev": "npm run watch",
+    "watch": "tsc -w",
+    "pretest": "npm run compile",
+    "test": "npm run testonly --",
+    "posttest": "npm run lint",
+    "testonly": "mocha --reporter spec --full-trace lib/test/index.js",
+    "lint": "grunt tslint"
+  },
+  "author": "mstn",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-client": "^0.4.22",
+    "graphql": "^0.7.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^3.4.32",
+    "@types/chai-as-promised": "0.0.28",
+    "@types/mocha": "^2.2.32",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "colors": "^1.1.2",
+    "es6-promise": "^4.0.5",
+    "graphql-tag": "^0.1.15",
+    "grunt": "^1.0.1",
+    "grunt-tslint": "^3.3.0",
+    "isomorphic-fetch": "^2.2.1",
+    "mocha": "^3.1.2",
+    "source-map-support": "^0.4.5",
+    "typed-graphql": "1.0.2"
+  },
+  "optionalDependencies": {
+    "@types/async": "^2.0.31",
+    "@types/isomorphic-fetch": "0.0.30",
+    "@types/node": "^6.0.38",
+    "@types/promises-a-plus": "0.0.26",
+    "@types/redux": "^3.5.29",
+    "@types/sinon": "^1.16.29"
+  }
+}
