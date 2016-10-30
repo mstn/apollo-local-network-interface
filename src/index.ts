@@ -1,5 +1,11 @@
 import {
   LocalNetworkInterface,
+  createLocalNetworkInterface,
+  LocalNetworkInterfaceOptions,
 } from './LocalNetworkInterface';
 
-export default { LocalNetworkInterface };
+export {
+  LocalNetworkInterface,
+  createLocalNetworkInterface,
+  LocalNetworkInterfaceOptions,
+};
