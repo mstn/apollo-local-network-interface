@@ -1,9 +1,5 @@
 scripts
 test
-typings
 .gitignore
 CHANGELOG.md
 Gruntfile.js
-tsconfig.json
-tslint.json
-typings.json
