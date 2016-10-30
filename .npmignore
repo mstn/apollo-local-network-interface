@@ -1,5 +1,4 @@
 scripts
-test
 .gitignore
 CHANGELOG.md
 Gruntfile.js
