@@ -26,4 +26,4 @@ As the original package [relay-local-schema](https://github.com/relay-tools/rela
 
 * Strongly influenced by and based on [relay-local-schema](https://github.com/relay-tools/relay-local-schema).
 * Steven Luscher [REST API GraphQL wrapper](http://graphql.org/blog/rest-api-graphql-wrapper/)
-* @dalgard @stubailo and @linonetwo in [this discussion](https://github.com/apollostack/apollo-client/issues/379) on GH
+* @dalgard @stubailo and @linonetwo in [this discussion](https://github.com/apollostack/apollo-client/issues/379) on GH. In particular @linonetwo implemented a very similar `NetworkInterface` in [his blog](https://linonetwo.github.io/%E6%8A%8AREST%E5%8C%85%E8%A3%85%E6%88%90GraphQL/).
