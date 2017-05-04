@@ -12,7 +12,8 @@
     "test": "npm run testonly --",
     "posttest": "npm run lint",
     "testonly": "mocha --reporter spec --full-trace lib/test/index.js",
-    "lint": "grunt tslint"
+    "lint": "grunt tslint",
+    "postinstall": "npm run compile"
   },
   "author": "mstn",
   "license": "MIT",
