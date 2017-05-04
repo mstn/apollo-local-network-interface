@@ -5,7 +5,7 @@
   "main": "./lib/src/index.js",
   "typings": "./lib/src/index.d.ts",
   "scripts": {
-    "compile": "tsc",
+    "compile": "tsc -p tsconfig-dev.json",
     "dev": "npm run watch",
     "watch": "tsc -w",
     "pretest": "npm run compile",
@@ -13,7 +13,7 @@
     "posttest": "npm run lint",
     "testonly": "mocha --reporter spec --full-trace lib/test/index.js",
     "lint": "grunt tslint",
-    "postinstall": "npm run compile"
+    "postinstall": "tsc"
   },
   "author": "mstn",
   "license": "MIT",
