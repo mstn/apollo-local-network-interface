@@ -17,31 +17,32 @@
   "author": "mstn",
   "license": "MIT",
   "dependencies": {
-    "apollo-client": "^0.4.22",
-    "graphql": "^0.7.2"
+    "apollo-client": "^1.2.0",
+    "graphql": "^0.9.6"
   },
   "devDependencies": {
     "@types/chai": "^3.4.32",
-    "@types/chai-as-promised": "0.0.28",
+    "@types/chai-as-promised": "0.0.30",
     "@types/mocha": "^2.2.32",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "colors": "^1.1.2",
     "es6-promise": "^4.0.5",
-    "graphql-tag": "^0.1.15",
+    "graphql-tag": "^2.0.0",
     "grunt": "^1.0.1",
-    "grunt-tslint": "^3.3.0",
-    "isomorphic-fetch": "^2.2.1",
+    "grunt-tslint": "^5.0.1",
     "mocha": "^3.1.2",
     "source-map-support": "^0.4.5",
-    "typed-graphql": "1.0.2"
+    "tslint": "^5.2.0",
+    "typed-graphql": "^1.0.2",
+    "typescript": "^2.3.2"
   },
   "optionalDependencies": {
     "@types/async": "^2.0.31",
-    "@types/isomorphic-fetch": "0.0.30",
-    "@types/node": "^6.0.38",
+    "isomorphic-fetch": "^2.2.1",
+    "@types/node": "^7.0.16",
     "@types/promises-a-plus": "0.0.26",
-    "@types/redux": "^3.5.29",
-    "@types/sinon": "^1.16.29"
+    "@types/redux": "^3.6.31",
+    "@types/sinon": "^2.2.0"
   }
 }

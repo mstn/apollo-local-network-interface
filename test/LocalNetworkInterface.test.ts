@@ -23,20 +23,14 @@ describe('local network interface', () => {
     resetData();
   });
 
-  it('should throw without a schema', () => {
-    assert.throws(() => {
-      createLocalNetworkInterface(null);
-    }, /A schema is required for a network layer/);
-  });
-
   it('should create an instance with a given schema', () => {
     const networkInterface = createLocalNetworkInterface({ schema });
     assert.instanceOf(networkInterface.getSchema(), GraphQLSchema);
   });
 
-  it('should fetch data', (done) => {
+  it('should fetch data', () => {
     const networkInterface = createLocalNetworkInterface({ schema });
-    const client = new ApolloClient({ networkInterface });
+    const client = new ApolloClient({ networkInterface, addTypename: false });
     const query = gql`
       query {
         widget {
@@ -44,19 +38,20 @@ describe('local network interface', () => {
         }
       }
     `;
-    client.query({
+    return client.query({
       query,
-    }).then( ({ data, loading }) => {
+    }).then( ({ data, loading }: any) => {
       assert.isObject( data );
       assert.equal( loading, false );
       assert.deepEqual( data, { widget: {name: 'foo'}} );
-      done();
+    }).catch( (error) => {
+      assert.isNotOk(error, 'Cannot fetch data');
     });
   });
 
-  it('should execute mutation', (done) => {
+  it('should execute mutation', () => {
     const networkInterface = createLocalNetworkInterface({ schema });
-    const client = new ApolloClient({ networkInterface });
+    const client = new ApolloClient({ networkInterface, addTypename: false });
     const mutation = gql`
       mutation setWidgetName( $name: String! ) {
         setWidgetName(name: $name) {
@@ -64,14 +59,15 @@ describe('local network interface', () => {
         }
       }
     `;
-    client.mutate({
+    return client.mutate({
       mutation,
       variables: {
         name: 'fee',
       },
-    }).then( ( { data } ) => {
+    }).then( ( { data }: any ) => {
       assert.deepEqual( data, { setWidgetName: {name: 'fee'}} );
-      done();
+    }).catch( (error) => {
+      assert.isNotOk(error, 'Cannot mutate data');
     });
   });
 

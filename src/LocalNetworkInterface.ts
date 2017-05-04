@@ -1,26 +1,24 @@
-import { printAST } from 'apollo-client';
-import { NetworkInterface, Request } from 'apollo-client/networkInterface';
+import { printAST, NetworkInterface, Request } from 'apollo-client';
 
-import { GraphQLSchema, GraphQLResult, graphql } from 'graphql';
+import { GraphQLSchema, ExecutionResult, graphql } from 'graphql';
 
 export interface LocalNetworkInterfaceOptions {
   schema: GraphQLSchema;
-  opts?: RequestInit;
 }
 
 export class LocalNetworkInterface implements NetworkInterface {
-  private schema: GraphQLSchema = null;
-  public constructor(schema: GraphQLSchema, opts: RequestInit = {}) {
+  private schema: GraphQLSchema;
+  public constructor(schema: GraphQLSchema) {
     this.schema = schema;
   }
-  public query(request: Request): Promise<GraphQLResult> {
+  public query(request: Request): Promise<ExecutionResult> {
     const { query, variables } = request;
     return graphql(
       this.schema,
       printAST(query),
       null,
       null,
-      variables
+      variables,
     );
   }
   public getSchema(): GraphQLSchema {
@@ -28,13 +26,7 @@ export class LocalNetworkInterface implements NetworkInterface {
   }
 }
 
-export function createLocalNetworkInterface(interfaceOpts: LocalNetworkInterfaceOptions): LocalNetworkInterface {
-  const {
-    opts = {},
-    schema,
-  } = interfaceOpts || {} as LocalNetworkInterfaceOptions;
-  if (!schema) {
-    throw 'A schema is required for a network layer';
-  }
-  return new LocalNetworkInterface(schema, opts);
+export function createLocalNetworkInterface(options: LocalNetworkInterfaceOptions): LocalNetworkInterface {
+  const { schema } = options;
+  return new LocalNetworkInterface(schema);
 }
