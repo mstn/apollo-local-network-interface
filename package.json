@@ -17,7 +17,7 @@
     "postinstall": "tsc"
   },
   "author": "mstn",
-  "license": "MIT",
+  "license": "CC0",
   "dependencies": {
     "apollo-client": "^1.2.0",
     "graphql": "^0.9.6"
