@@ -13,7 +13,11 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "lib": [
+      "dom",
+      "es2015"
+    ]
   },
   "files": [
     "src/index.ts",
