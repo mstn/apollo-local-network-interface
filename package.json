@@ -13,14 +13,12 @@
     "test": "npm run testonly --",
     "posttest": "npm run lint",
     "testonly": "mocha --reporter spec --full-trace lib/test/index.js",
-    "lint": "grunt tslint",
-    "postinstall": "tsc"
+    "lint": "grunt tslint"
   },
   "author": "mstn",
   "license": "CC0",
   "dependencies": {
-    "apollo-client": "^1.2.0",
-    "graphql": "^0.9.6"
+    "apollo-client": "^1.2.0"
   },
   "devDependencies": {
     "@types/chai": "^3.4.32",
