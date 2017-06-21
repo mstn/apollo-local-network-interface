@@ -2,7 +2,15 @@ Use ApolloClient without a GraphQL server. This is a porting of [relay-local-sch
 
 # Usage
 
-`LocalNetworkLayer` enables ApolloClient to execute GraphQL queries and mutations locally.
+This package implements a common pattern for using ApolloClient without a GraphQL server.
+The code is simple, even trivial, and you might prefer to roll up your own version.
+You can add this package to your project with:
+
+```
+npm install mstn:apollo-local-network-interface#v1.0.0
+```
+
+`LocalNetworkInterface` enables ApolloClient to execute GraphQL queries and mutations locally.
 
 ```js
 import ApolloClient from 'apollo-client';
@@ -17,7 +25,7 @@ const client = new ApolloClient({ networkInterface });
 
 # Why
 
-As the original package [relay-local-schema](https://github.com/relay-tools/relay-local-schema) for Relay framework, `LocalNetworkLayer` could be useful in a variety of cases:
+As the original package [relay-local-schema](https://github.com/relay-tools/relay-local-schema) for Relay framework, `LocalNetworkInterface` could be useful in a variety of cases:
 * testing,
 * demos,
 * client side wrapper for legacy REST APIs.
