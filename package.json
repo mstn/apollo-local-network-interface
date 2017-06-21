@@ -5,7 +5,8 @@
   "main": "./lib/src/index.js",
   "typings": "./lib/src/index.d.ts",
   "scripts": {
-    "compile": "tsc -p tsconfig-dev.json",
+    "release": "./scripts/release.sh",
+    "compile": "tsc -p tsconfig.json",
     "dev": "npm run watch",
     "watch": "tsc -w",
     "pretest": "npm run compile",
