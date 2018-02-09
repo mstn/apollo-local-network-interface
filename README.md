@@ -1,3 +1,5 @@
+> Almost deprecated since the introduction ApolloLinks in Apollo 2
+
 Use ApolloClient without a GraphQL server. This is a porting of [relay-local-schema](https://github.com/relay-tools/relay-local-schema) for Apollostack.
 
 # Usage
@@ -39,3 +41,21 @@ As the original package [relay-local-schema](https://github.com/relay-tools/rela
 # More info
 
 * @lucasconstantino wrote a very nice [blog post](https://medium.com/taller-team/graphql-today-using-apollo-for-applications-that-still-depend-on-rest-apis-839895ce20d0) about this topic. I recommend it!
+
+# Update: Apollo 2
+
+If you use Apollo 2, **you do not need this package**. Indeed, you can pass an [apollo-link-schema](https://www.npmjs.com/package/apollo-link-schema) to your Apollo client. From official documentation:
+
+```js
+import { ApolloClient } from 'apollo-client';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { SchemaLink } from 'apollo-link-schema';
+ 
+import schema from './data/schema';
+ 
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: new SchemaLink({ schema })
+});
+```
+
